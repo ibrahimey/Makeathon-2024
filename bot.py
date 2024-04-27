@@ -3,7 +3,7 @@ from model import model
 
 st.title("Electrician")
 
-with open("prompt.txt") as file:
+with open("prompt.txt", "r") as file:
     system_prompt = file.read()
 
 # Initialize chat history
