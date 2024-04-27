@@ -9,7 +9,7 @@ with open("prompt.txt", "r") as file:
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = [{"role": "system", "content": system_prompt},
-                                 {"role": "assistant", "content": "Hi! I'm ElectroBotto, how can I help you today?"}]
+                                 {"role": "assistant", "content": "Hi! I'm ElectroBotto, I'm here to find the best Mercedes-Benz electric car for you! Can you tell me a bit about yourself so I can help you better?"}]
 
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
@@ -20,7 +20,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # React to user input
-if prompt := st.chat_input("Your question"):
+if prompt := st.chat_input("Your response"):
     # Display user message in chat message container
     st.chat_message("user").markdown(prompt)
     # Add user message to chat history
