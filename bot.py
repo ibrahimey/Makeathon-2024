@@ -1,14 +1,15 @@
 import streamlit as st
 from model import model
 
-st.title("Electrician")
+st.title("ElectroBotto")
 
 with open("prompt.txt", "r") as file:
     system_prompt = file.read()
 
 # Initialize chat history
 if "messages" not in st.session_state:
-    st.session_state.messages = [{"role": "system", "content": system_prompt}]
+    st.session_state.messages = [{"role": "system", "content": system_prompt},
+                                 {"role": "assistant", "content": "Hi! I'm ElectroBotto, how can I help you today?"}]
 
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
@@ -19,7 +20,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # React to user input
-if prompt := st.chat_input("How can I help you?"):
+if prompt := st.chat_input("Your question"):
     # Display user message in chat message container
     st.chat_message("user").markdown(prompt)
     # Add user message to chat history
