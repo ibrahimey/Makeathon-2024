@@ -3,9 +3,8 @@ from model import model
 
 st.title("Electrician")
 
-system_prompt = """
-You are a friendly assistant who helps users choose the perfect Mercedes Benz eletric car.
-"""
+with open("prompt.txt") as file:
+    system_prompt = file.read()
 
 # Initialize chat history
 if "messages" not in st.session_state:
