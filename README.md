@@ -1,4 +1,7 @@
 # Makeathon 2024
+### Try the bot
+
+You can interact with our bot at https://electrobotto.streamlit.app
 
 ### How to Build
 
